@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        table, th, td, caption {
+            border: 1px solid #a0a0a0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-width: thin 0 0 thin;
+            margin: 0 0 1em;
+            table-layout: auto;
+            max-width: 100%;
+        }
+        th, td {
+            font-weight: normal;
+            text-align: left;
+        }
+        th, caption {
+            background-color: #f1f3f4;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "http://localhost:8080/windengine/001/json"
+        }).then(function(data) {
+            $('#windengineID').append(data.windengineID);
+            $('#timestamp').append(data.timestamp);
+            $('#windspeed').append(data.windspeed);
+            $('#unitWindspeed').append(data.unitWindspeed);
+            $('#temperature').append(data.temperature);
+            $('#unitTemperature').append(data.unitTemperature);
+            $('#power').append(data.power);
+            $('#unitPower').append(data.unitPower);
+            $('#blindpower').append(data.blindpower);
+            $('#unitBlindpower').append(data.unitBlindpower);
+            $('#rotationspeed').append(data.rotationspeed);
+            $('#unitRotationspeed').append(data.unitRotationspeed);
+            $('#bladeposition').append(data.bladeposition);
+            $('#unitBladeposition').append(data.unitBladeposition);
+
+        });
+    });
+</script>
+<body>
+<table>
+    <tr>
+        <th>windengineID</th>
+        <th>timestamp</th>
+        <th>windspeed</th>
+        <th>unitWindspeed</th>
+        <th>temperature</th>
+        <th>unitTemperature</th>
+        <th>power</th>
+        <th>unitPower</th>
+        <th>blindpower</th>
+        <th>unitBlindpower</th>
+        <th>rotationspeed</th>
+        <th>unitRotationspeed</th>
+        <th>bladeposition</th>
+        <th>unitBladeposition</th>
+    </tr>
+    <tr>
+        <td><span id="windengineID"></span></td>
+        <td><span id="timestamp"></span></td>
+        <td><span id="windspeed"></span></td>
+        <td><span id="unitWindspeed"></span></td>
+        <td><span id="temperature"></span></td>
+        <td><span id="unitTemperature"></span></td>
+        <td><span id="power"></span></td>
+        <td><span id="unitPower"></span></td>
+        <td><span id="blindpower"></span></td>
+        <td><span id="unitBlindpower"></span></td>
+        <td><span id="rotationspeed"></span></td>
+        <td><span id="unitRotationspeed"></span></td>
+        <td><span id="bladeposition"></span></td>
+        <td><span id="unitBladeposition"></span></td>
+    </tr>
+</table>
+</body>
+</html>
