@@ -28,10 +28,10 @@
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $.ajax({
             url: "http://localhost:8080/windengine/001/json"
-        }).then(function(data) {
+        }).then(function (data) {
             $('#windengineID').append(data.windengineID);
             $('#timestamp').append(data.timestamp);
             $('#windspeed').append(data.windspeed);
